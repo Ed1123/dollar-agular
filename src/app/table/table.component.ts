@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements AfterViewInit {
 
   constructor() { }
 
   displayedColumns: string[] = ['name', 'buy_price', 'sell_price', 'url'];
-  dataSource: DollarExchange[] = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  ngOnInit(): void {
+  @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
 }
@@ -27,8 +32,8 @@ export interface DollarExchange {
 const ELEMENT_DATA: DollarExchange[] = [
   {
     name: 'test',
-    buy_price: 3.8,
-    sell_price: 3.9,
+    buy_price: 3.7,
+    sell_price: 3.8,
     url: 'test.com'
   },
   {
