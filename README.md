@@ -1,5 +1,9 @@
 # Dollar
 
+Mainly a demonstrative project. Just a table with local online exchange house prices.
+
+The API repo is here: https://github.com/Ed1123/dollar-price
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
