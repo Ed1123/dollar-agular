@@ -19,9 +19,10 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit() {
-    this.dollar.getData().subscribe(res => {
-      this.dataSource.data = res.filter(exchange => exchange.buy_price != 0);
-    })
+    // this.dollar.getData().subscribe(res => {
+    //   this.dataSource.data = res.filter(exchange => exchange.buy_price != 0);
+    // })
+    this.dataSource.data = ELEMENT_DATA;
   }
 
   ngAfterViewInit() {
@@ -29,3 +30,18 @@ export class TableComponent implements AfterViewInit, OnInit {
   }
 
 }
+
+const ELEMENT_DATA: DollarExchange[] = [
+  {
+    exchange_name: 'test',
+    buy_price: 3.7,
+    sell_price: 3.8,
+    url: 'test.com'
+  },
+  {
+    exchange_name: 'test',
+    buy_price: 3.8,
+    sell_price: 3.9,
+    url: 'test.com'
+  },
+];
