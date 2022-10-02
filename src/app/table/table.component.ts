@@ -10,7 +10,7 @@ import { DollarExchange, DollarService } from '../dollar.service';
 })
 export class TableComponent implements AfterViewInit, OnInit {
 
-  displayedColumns: string[] = ['name', 'buy_price', 'sell_price', 'url'];
+  displayedColumns: string[] = ['name', 'buy_price', 'sell_price'];
   dataSource = new MatTableDataSource<DollarExchange>();
 
   constructor(private dollar: DollarService) {
@@ -36,12 +36,12 @@ const ELEMENT_DATA: DollarExchange[] = [
     exchange_name: 'test',
     buy_price: 3.7,
     sell_price: 3.8,
-    url: 'test.com'
+    url: 'https://www.google.com'
   },
   {
-    exchange_name: 'test',
+    exchange_name: 'test 1',
     buy_price: 3.8,
     sell_price: 3.9,
-    url: 'test.com'
+    url: 'https://www.google.com'
   },
 ];
