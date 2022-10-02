@@ -10,7 +10,7 @@ import { DollarExchange, DollarService } from '../dollar.service';
 })
 export class TableComponent implements AfterViewInit, OnInit {
 
-  displayedColumns: string[] = ['name', 'buy_price', 'sell_price'];
+  displayedColumns: string[] = ['exchange_name', 'buy_price', 'sell_price'];
   dataSource = new MatTableDataSource<DollarExchange>();
 
   constructor(private dollar: DollarService) {
@@ -19,10 +19,10 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit() {
-    // this.dollar.getData().subscribe(res => {
-    //   this.dataSource.data = res.filter(exchange => exchange.buy_price != 0);
-    // })
-    this.dataSource.data = ELEMENT_DATA;
+    this.dollar.getData().subscribe(res => {
+      this.dataSource.data = res.filter(exchange => exchange.buy_price != 0);
+    })
+    // this.dataSource.data = ELEMENT_DATA;
   }
 
   ngAfterViewInit() {
