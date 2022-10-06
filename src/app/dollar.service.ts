@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 
 export interface DollarExchange {
@@ -14,7 +15,7 @@ export interface DollarExchange {
   providedIn: 'root'
 })
 export class DollarService {
-  url = 'http://127.0.0.1:8000/rates';
+  url = `${environment.dollarApiUrl}/rates`;
 
   constructor(private http: HttpClient) { }
 

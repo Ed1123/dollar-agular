@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  dollarApiUrl: 'https://9vc25p.deta.dev'
 };
