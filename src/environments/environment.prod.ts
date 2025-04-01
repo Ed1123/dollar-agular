@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  dollarApiUrl: 'https://9vc25p.deta.dev'
+  dollarApiUrl: 'https://dollar-sol-api-812540214021.us-central1.run.app'
 };
